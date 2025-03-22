@@ -13,11 +13,6 @@ class Board:
     def make_move(self, row, col, player):
         self.board[row][col] = player
 
-    def display(self):
-        for row in self.board:
-            print('|'.join(row))
-            print('-' * 5)
-
     def is_board_full(self):
         for i in range(self.field_size):
             for j in range(self.field_size):
@@ -38,10 +33,6 @@ class Board:
         ):
             return True
         return False
-
-    def save_result(self, result):
-        with open('results.txt', 'a') as file:
-            file.write(result + '\n')
 
     def __str__(self):
         return (
